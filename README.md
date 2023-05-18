@@ -33,6 +33,7 @@
 ## 🦾 Technologies
 
 ## 🔗 References
+[Padrões de Commits](https://github.com/iuricode/padroes-de-commits) | The "Padrões de Commits" (Commit Patterns) repository is a collection of guidelines and best practices for creating meaningful and consistent commit messages in Git repositories. 
 
 ## 📜  License
 This project is licensed under the terms of the [LICENSE](LICENSE) file. See the file for more details. <br>
