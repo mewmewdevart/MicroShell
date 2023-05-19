@@ -8,7 +8,7 @@ NAME = ${BINS_PATH}microshell
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 # Linker flags : 'libft' library
-LFLAGS = -lft
+LFLAGS = -lft -lreadline
 # Command to remove files/directories
 REMOVE = rm -rf
 # Command to create directories
@@ -23,6 +23,7 @@ HEADER_PATH = ./include/
 LIBFT_PATH = $(LIBS_PATH)libft/
 # Sources files
 SRCS_FILES = error_message.c \
+	     echo.c \
 
 # Object files
 OBJS_FILES = $(patsubst %.c, $(OBJS_PATH)%.o, $(SRCS_FILES))
