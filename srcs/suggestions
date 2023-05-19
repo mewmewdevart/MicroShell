@@ -1,0 +1,25 @@
+src/ (ou source/):
+shell.c: Contém a implementação principal do shell.
+shell.h: Contém as declarações de funções e estruturas necessárias para o shell.
+
+src/builtins/:
+echo.c: Implementação do comando interno echo.
+cd.c: Implementação do comando interno cd.
+pwd.c: Implementação do comando interno pwd.
+export.c: Implementação do comando interno export.
+unset.c: Implementação do comando interno unset.
+env.c: Implementação do comando interno env.
+exit.c: Implementação do comando interno exit.
+
+src/utils/:
+string_utils.c: Funções utilitárias para manipulação de strings.
+history.c: Funções para manipulação do histórico.
+env_utils.c: Funções para manipulação de variáveis de ambiente.
+redirection.c: Funções para manipulação de redirecionamento.
+signal_handlers.c: Funções para manipulação de sinais (ctrl-C, ctrl-D, ctrl-).
+Outras funções utilitárias relevantes para o funcionamento do shell.
+
+src/exec/:
+command1.c: Implementação do primeiro comando externo.
+command2.c: Implementação do segundo comando externo.
+...: Outros arquivos para os comandos externos adicionais.
