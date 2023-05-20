@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   microshell.c                                       :+:      :+:    :+:   */
+/*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: larcrist <larcrist@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 17:20:51 by larcrist          #+#    #+#             */
-/*   Updated: 2023/05/19 17:26:59 by larcrist         ###   ########.fr       */
+/*   Created: 2023/05/20 12:28:50 by larcrist          #+#    #+#             */
+/*   Updated: 2023/05/20 12:28:51 by larcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/microshell.h"
 
-int	main(void)
+void	exec_commands(char **pathname)
 {
-	char	**start;
-	char	**return_execv;
-	char	*input;
+	int			exit_code;
+	pid_t		pid;
+	extern char	**environ;
 
-	input = "";
-	while (ft_strncmp(input, "exit", 5) != 0)
+	pid = fork();
+	if (pid == 0)
 	{
-		input = readline("$ ");
-		if (ft_strncmp(input, "echo", 4))
-			ft_echo(&input[5]);
-		else
-		{
-			return_execv = ft_split(input, ' ');
-			start = return_execv;
-			exec_commands(return_execv);
-			while (*return_execv)
-				free(*return_execv++);
-			free(start);
-		}
+		if (execve(*pathname, pathname, environ) == -1)
+			return (0); //Need to be changed
 	}
-	return (0);
+	else
+		waitpid(pid, &exit_code, 0);
 }

@@ -24,6 +24,7 @@ LIBFT_PATH = $(LIBS_PATH)libft/
 # Sources files
 SRCS_FILES = error_message.c \
 	     echo.c \
+		 execute.c \
 
 # Object files
 OBJS_FILES = $(patsubst %.c, $(OBJS_PATH)%.o, $(SRCS_FILES))

@@ -39,5 +39,6 @@
 void	ft_errors_init(int number_error);
 
 void	ft_echo(char *input);
+void exec_commands(char **pathname);
 
 #endif
